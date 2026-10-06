@@ -22,7 +22,8 @@ The application retrieves the most relevant information from the annual report u
 ---
 
 ## 🏗️ Project Architecture
-'
+
+```text
                   TCS Annual Report PDF
                            |
                            v
@@ -64,8 +65,9 @@ The application retrieves the most relevant information from the annual report u
                            |
                            v
                        Postman
+```
 
-
+---
 
 ## 🛠️ Technologies Used
 
@@ -81,10 +83,11 @@ The application retrieves the most relevant information from the annual report u
 | Postman               | API testing                                      |
 | PyPDF                 | PDF document loading                             |
 
+---
 
 ## 📂 Project Structure
 
-
+```text
 tcs-insightbot/
 │
 ├── app.py
@@ -97,7 +100,7 @@ tcs-insightbot/
 └── tcs_doc_index/
     ├── index.faiss
     └── index.pkl
-
+```
 
 > The `.env` file containing the Gemini API key is intentionally excluded from the repository for security.
 
@@ -119,9 +122,9 @@ This allows the system to retrieve relevant portions of the report instead of pr
 
 Each text chunk is converted into a numerical vector using:
 
-
+```text
 sentence-transformers/all-mpnet-base-v2
-
+```
 
 These vectors represent the semantic meaning of the document content.
 
@@ -131,7 +134,9 @@ The generated embeddings are stored in a **FAISS vector database**.
 
 The vector database is persisted locally in:
 
-
+```text
+tcs_doc_index/
+```
 
 ### 5. Question Retrieval
 
@@ -159,9 +164,9 @@ The generated answer is returned to the user as JSON through the Flask REST API.
 
 ### Endpoint
 
-
+```text
 POST /ask
-
+```
 
 ### Request
 
